@@ -1,16 +1,23 @@
-import React from 'react';
+import React,{Component} from 'react';
 import Menu from "./components/MenuComponents";
+import { DISHES } from './other/dishes';
 
-function App() {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dishes: DISHES
+    };
+  }
+  
+
+render (){
   return (
-    <div className="App">
-      
-      <Menu>
+    <div>
 
-      </Menu>
-     
-    </div>
-  );
+    <Menu dishes={this.state.dishes} />
+  </div>
+)}
 }
 
 export default App;
