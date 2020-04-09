@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
 import {Card,CardImg,CardBody,CardTitle,CardText} from 'reactstrap';
 
-
-class DishDetail extends Component {
+class DishDetail extends Component {    
     constructor(props){
         super(props)
     }
@@ -21,10 +20,11 @@ class DishDetail extends Component {
      
     render(){
         const {dish, showComments} = this.props;
+            console.log('Hi',this.props);
             return (
                 <div className = "row">
                     <div className = "col-3 col-md-5 m-1">
-                    <Card onClick={() => this.props.onDishSelect(dish)}>
+                    <Card onClick={() => this.props.onClick(dish.id)}>
                     <CardImg top src={dish.image} alt={dish.name} />
                         <CardBody>
                             <CardTitle>{dish.name}</CardTitle>

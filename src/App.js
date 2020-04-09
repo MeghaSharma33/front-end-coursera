@@ -1,21 +1,11 @@
 import React,{Component} from 'react';
-import Menu from "./components/MenuComponents";
-import { DISHES } from './other/dishes';
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dishes: DISHES
-    };
-  }
+import Main from "./components/MainComponent";
   
-
+class App extends Component {
 render (){
   return (
     <div>
-
-    <Menu dishes={this.state.dishes} />
+      <Main />
   </div>
 )}
 }

@@ -1,11 +1,15 @@
 import React,{Component} from 'react';
-import Dishdetail from './DishdetailComponent';
+import DishDetail from './DishdetailComponent';
+import { DISHES } from '../other/dishes';
+
+
 
 
 class Menu extends Component {
     constructor(props){
         super(props);
         this.state = {
+                        dishes : DISHES,
 						selectedDish : null
 	
 				}
@@ -14,11 +18,11 @@ class Menu extends Component {
         this.setState({ selectedDish: dish});
     }
 
+    
     renderDish = (dish) => {
-			console.log('THE DUS', dish)
         if(dish != null) {
 					return(
-            <Dishdetail dish={dish} onDishSelect={this.onDishSelect} showComments={true}/>
+            <DishDetail dish={dish} onDishSelect={this.onDishSelect} showComments={true}/>
         	)
 				} else {
 					return null;
@@ -26,20 +30,27 @@ class Menu extends Component {
         
         
     }
+    onClick =(id) => {
+        console.log("Ok",this.state.dishes);
+        const dish = this.state.dishes.filter((item) => item.id === id)[0]; 
+        this.onDishSelect(dish)
+    }
 
 
     render(){
 			const menu = this.props.dishes.map((dish) => {       
             return(
                 <div className = "container" >
-										<Dishdetail dish={dish} onDishSelect={this.onDishSelect}/>        	
+                    <DishDetail dish={dish} onClick={this.onClick}/>
                 </div>
             );
 			});           
-      return(<div className="container">
+      return(
+            <div className="container">
 				<div className="row">{menu}</div>
 				<div className="row">{this.renderDish(this.state.selectedDish)}</div>
-			</div>)     
+            </div>
+            )     
     }
 
     
@@ -47,8 +58,3 @@ class Menu extends Component {
     
 };
 export default Menu;
-
-
-
-
-
