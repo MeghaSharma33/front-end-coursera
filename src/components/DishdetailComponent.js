@@ -10,7 +10,7 @@ class DishDetail extends Component {
             <ul key={comment.id} className="list-styled">
                 <li className="mb-2">{comment.comment}</li>
                 <li>
-                    -- {comment.author}{" "}
+                    -- {comment.author}{" "} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
                 </li>
             </ul>
 

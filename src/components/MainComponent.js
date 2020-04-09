@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import Menu from "../components/MenuComponents";
 import { DISHES } from '../other/dishes';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import DishDetail from './DishdetailComponent';
 
 class Main extends Component {
   constructor(props) {
