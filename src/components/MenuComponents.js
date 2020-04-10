@@ -31,7 +31,6 @@ class Menu extends Component {
         
     }
     onClick =(id) => {
-        console.log("Ok",this.state.dishes);
         const dish = this.state.dishes.filter((item) => item.id === id)[0]; 
         this.onDishSelect(dish)
     }

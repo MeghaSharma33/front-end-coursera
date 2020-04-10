@@ -2,9 +2,14 @@ import React,{Component} from 'react';
 import {Card,CardImg,CardBody,CardTitle,CardText} from 'reactstrap';
 
 class DishDetail extends Component {    
-    constructor(props){
-        super(props)
-    }
+
+    // componentDidMount(){
+    //     console.log('Dishdetail mounted');
+    // }
+   
+    // componentDidUpdate(){
+    //     console.log('Dishdetail updated');
+    // }
     renderComments(comments){
         return comments.map(comment => (
             <ul key={comment.id} className="list-styled">
@@ -20,7 +25,6 @@ class DishDetail extends Component {
      
     render(){
         const {dish, showComments} = this.props;
-            console.log('Hi',this.props);
             return (
                 <div className = "row">
                     <div className = "col-3 col-md-5 m-1">
